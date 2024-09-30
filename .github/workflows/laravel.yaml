@@ -32,3 +32,14 @@ jobs:
           composer install --no-interaction
 
 
+      - name: Set App
+        run : cp .env.example .env
+
+      - name: Set Key
+        run : php artisan key:generate
+
+      - name: Run Test
+        run : vendor\bin\phpunit
+
+
+
